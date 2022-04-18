@@ -6,37 +6,37 @@ import {
   GET_ALL_TO_DOS,
 } from '../types';
 
-export function addToDo(content) {
+export const  addToDo = (content)=> (dispatch,getState) =>{
   const payload = {
     id: uuid(),
     title: content,
     completed: false,
   };
-  return {
+  dispatch( {
     type: ADD_TO_DO,
     payload,
-  };
+  });
 }
-export function deleteToDo(id) {
+export const  deleteToDo = (id)=>(dispatch,getState)=> {
   const payload = { id };
-  return {
+  dispatch( {
     type: DELETE_TO_DO,
     payload,
-  };
+  });
 }
 
-export function markItemAsCompleted(id) {
+export const  markItemAsCompleted = (id) => (dispatch,getState)=>{
   const payload = { id };
-  return {
+  dispatch( {
     type: MARK_AS_COMPLETED,
     payload,
-  };
+  });
 }
 
-export function getAllTodos(initialData) {
+export const  getAllTodos = (initialData)=>(dispatch,getState)=> {
   const payload = { initialData };
-  return {
+  dispatch( {
     type: GET_ALL_TO_DOS,
     payload,
-  };
+  });
 }
