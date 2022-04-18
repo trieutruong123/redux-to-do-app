@@ -1,1 +1,1 @@
-# redux-to-do-app
+# Redux Todo App
